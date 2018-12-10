@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/home/ubuntu/other/carGarage/data/car_garage.db" foreign_keys="1"/><window><current_tab id="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1618"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="0"/><expanded_item id="3" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="inspections"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="cars" sort_order_index="0" sort_order_mode="0" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="inspections" sort_order_index="0" sort_order_mode="0" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table></browse_table_settings><tab_sql><sql name="SQL 1">select cars.brand, cars.model, inspections.dateTimestamp, inspections.km
+from cars
+left join inspections on inspections.carId = cars.id
+where cars.id = '7'
+
+select users.username, cars.brand, cars.model, inspections.dateTimestamp, inspections.km
+from users
+JOIN cars
+    on cars.userId = users.id
+JOIN inspections
+    on inspections.carId = cars.id
+where users.username = 'lindsay'
+
+
+insert into users (username, passwd) values ('lindsay', 'piruri');
+insert into users (username, passwd) values ('rafa', 'piruri')
+
+insert into cars (userId, brand, model) values ('3', 'seat', 'ibiza');
+insert into cars (userId, brand, model) values ('4', 'honda', 'civic')
+
+insert into inspections (carId, dateTimestamp, km) values ('1', '1544007455', '12000');
+insert into inspections (carId, dateTimestamp, km) values ('2', '1544007455', '13000');
+insert into inspections (carId, dateTimestamp, km) values ('1', '1544001155', '16000');
+insert into inspections (carId, dateTimestamp, km) values ('2', '1541117455', '15000');
+
+SELECT *  from cars
+SELECT *  from users
+SELECT *  from inspections
+
+delete from cars where cars.id &gt; 8
+
+
+delete from cars </sql><current_tab id="0"/></tab_sql></tab_browse></sqlb_project>
